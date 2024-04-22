@@ -24,7 +24,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 APPEND_SLASH = False
 
 STATIC_URL = '/static/'
-STATIC_ROOT = str(BASE_DIR / "static")
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
