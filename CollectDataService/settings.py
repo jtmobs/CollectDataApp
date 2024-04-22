@@ -71,16 +71,17 @@ WSGI_APPLICATION = 'CollectDataService.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': str(BASE_DIR / 'db.sqlite3'),
+    },
+
+    'users': {
         'ENGINE': 'djongo',
         'NAME': 'webpages',
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
             'host': "mongodb://localhost:27017"
         }
-    },
-    'users': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(BASE_DIR / 'db.sqlite3'),
     },
 }
 
