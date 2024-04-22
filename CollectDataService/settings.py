@@ -19,7 +19,7 @@ CORS_ALLOWED_ORIGIN_REGEXES = [
     'http://localhost:8000',
 ]
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', 'collectdataapp-583785287d33.herokuapp.com', cast=Csv())
 
 APPEND_SLASH = False
 
