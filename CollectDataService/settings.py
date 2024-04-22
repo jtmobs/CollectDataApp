@@ -69,12 +69,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'CollectDataService.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(BASE_DIR / 'db.sqlite3'),
-    },
-}
+DATABASES = {'default': config('DATABASE_URL', cast=db_url)}
+DATABASES['default']['CONN_MAX_AGE'] = 600
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
